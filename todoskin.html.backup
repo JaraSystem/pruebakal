@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Kaluza Beauty</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet"> 
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    <style>
+        .section-tabs {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section-filter {
+            list-style: none;
+            display: inline-flex;
+            gap: 10px;
+            padding: 0;
+            margin: 0;
+        }
+        .section-filter li {
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-text);
+            background: var(--color-white);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .section-filter li:hover,
+        .section-filter li.filter-active {
+            background: var(--color-primary);
+            color: var(--color-white);
+            border-color: var(--color-primary);
+        }
+        .catalog-section-content {
+            display: none;
+        }
+        .catalog-section-content.active {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            padding: 8px 60px 24px;
+        }
+        @media (max-width: 1200px) {
+            .catalog-section-content.active {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 8px 28px;
+            }
+        }
+        @media (max-width: 575px) {
+            .catalog-section-content.active {
+                grid-template-columns: 1fr;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+        <!-- Top Bar Start -->
+        <div class="top-bar d-none d-md-block">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="top-bar-left">
+                            <div class="text">
+                                <i class="far fa-clock"></i>
+                                <h2>8:00 - 9:00</h2>
+                                <p>Lun - Viern</p>
+                            </div>
+                            <div class="text">
+                                <i class="fa fa-phone-alt"></i>
+                                <h2>+51 999 999 999</h2>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="top-bar-right">
+                            <div class="social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="#" class="btn btn-outline btn-view">Ver todo</a>
+                </div>
+            </div>
+        </div>
+        <!-- Top Bar End -->
+
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">K<span>aluz</span>A</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.html" class="nav-item nav-link ">Inicio</a>
+                        <a href="novedades.html" class="nav-item nav-link ">novedades</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link active dropdown-toggle" data-toggle="dropdown">Skincare</a>
+                            <div class="dropdown-menu">
+                                <a href="Limpiadores.html" class="dropdown-item">Limpiadores</a>
+                                <a href="Exfoliantes.html" class="dropdown-item ">Exfoliantes</a>
+                                <a href="tonicos.html" class="dropdown-item ">Tónicos</a>
+                                <a href="toner.html" class="dropdown-item">Toner Pad</a>
+                                <a href="cremas.html" class="dropdown-item">Cremas/Barras</a>
+                                <a href="protector.html" class="dropdown-item">Protector solar</a>
+                                <a href="mascarillas.html" class="dropdown-item">Mascarillas y parches</a>
+                                <a href="sueros.html" class="dropdown-item">Sueros y ampollas</a>
+                                <a href="contorno.html" class="dropdown-item">Contorno de ojos</a>
+                                <a href="balsamo.html" class="dropdown-item">Bálsamo Labial</a>
+                                <a href="cuerpo.html" class="dropdown-item">Cuerpo y cabello</a>
+                                <a href="kits.html" class="dropdown-item">Kits</a>
+                                <a href="todoskin.html" class="dropdown-item nav-link active">Todo skincare</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Maquillaje</a>
+                            <div class="dropdown-menu">
+                                <a href="rostro.html" class="dropdown-item">Rostro (Base y Rubor)</a>
+                                <a href="labios.html" class="dropdown-item">Labios</a>
+                                <a href="ojos.html" class="dropdown-item">Ojos</a>
+                                <a href="unias.html" class="dropdown-item">Uñas y Manos</a>
+                                <a href="todomaquillaje.html" class="dropdown-item">Todo Maquillaje</a>
+                            </div>
+                        </div>
+                        <a href="kits.html" class="nav-item nav-link">Kits</a>
+                        <a href="problemas.html" class="nav-item nav-link">Problemas de piel</a>
+                        <a href="fashion.html" class="nav-item nav-link">Fashion</a>
+
+                        <!-- <a href="contact.html" class="nav-item nav-link">Contact</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Todo Skincare</h2>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- E-commerce Product Catalog Start -->
+        <section class="product-catalog">
+            <div class="container-fluid">
+                <div class="catalog-header">
+                    <div class="section-header">
+                        <p>Skincare</p>
+                        <h2>Todo Skincare</h2>
+                    </div>
+                    
+                    <!-- Search and Filter Bar -->
+                    <div class="catalog-controls">
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="Buscar productos..." autocomplete="off">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <div class="filter-categories">
+                            <button class="filter-btn active" data-category="all">Todos</button>
+                            <button class="filter-btn" data-category="kits">Kits</button>
+                            <button class="filter-btn" data-category="cuidado">Cuidado Diario</button>
+                            <button class="filter-btn" data-category="tratamientos">Tratamientos</button>
+                            <button class="filter-btn" data-category="accesorios">Accesorios</button>
+                            <button class="filter-btn" data-category="proteccion">Protección Solar</button>
+                            <button class="filter-btn" data-category="labios">Bálsamos y Labios</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div id="productsGrid" class="products-grid">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+
+                <!-- Pagination -->
+                <div id="pagination" class="pagination-container">
+                    <!-- Pagination will be generated dynamically -->
+                </div>
+            </div>
+        </section>
+        <!-- E-commerce Product Catalog End -->
+                    
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Isntree Super Aqua Set">
+                                    <img src="img/calendula.webp" alt="Isntree Super Aqua Set - Vista alternativa" class="img-hover">
+                                    <span class="badge">Oferta</span>
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Isntree Super Aqua Deep Care Set</p>
+                                    <p class="catalog-price"><del>S/. 280.00</del> S/. 252.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Cosrx Advanced Snail Set">
+                                    <img src="img/aqua.webp" alt="Cosrx Advanced Snail Set - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Cosrx Advanced Snail 92% Set</p>
+                                    <p class="catalog-price">S/. 189.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Some By Mi Set">
+                                    <img src="img/calendula.webp" alt="Some By Mi Set - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Some By Mi AHA-BHA-PHA Set</p>
+                                    <p class="catalog-price">S/. 156.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Benton Aloe Set">
+                                    <img src="img/aqua.webp" alt="Benton Aloe Set - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Benton Aloe BHA Skin Set</p>
+                                    <p class="catalog-price">S/. 142.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Inkey List Set">
+                                    <img src="img/calendula.webp" alt="Inkey List Set - Vista alternativa" class="img-hover">
+                                    <span class="badge">Nuevo</span>
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">The Inkey List Complete Routine Set</p>
+                                    <p class="catalog-price">S/. 178.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Naturium Set">
+                                    <img src="img/aqua.webp" alt="Naturium Set - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Naturium Vitamin C Daily Set</p>
+                                    <p class="catalog-price">S/. 164.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Cuidado Diario (9 products) -->
+                    <div id="section2" class="catalog-section-content">
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Limpiador Gel KOOS">
+                                    <img src="img/aqua.webp" alt="Limpiador Gel KOOS - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">KOOS Gentle Daily Cleansing Gel</p>
+                                    <p class="catalog-price">S/. 58.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Tónico Hadalabo">
+                                    <img src="img/calendula.webp" alt="Tónico Hadalabo - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Hada Labo Gokujyun Premium Toner</p>
+                                    <p class="catalog-price">S/. 45.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Essencia de Niacinamida">
+                                    <img src="img/aqua.webp" alt="Essencia de Niacinamida - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">The Ordinary Niacinamide 10% + Zinc</p>
+                                    <p class="catalog-price">S/. 62.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Crema Hidratante">
+                                    <img src="img/calendula.webp" alt="Crema Hidratante - Vista alternativa" class="img-hover">
+                                    <span class="badge">Oferta</span>
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">CeraVe Moisturizing Cream 45ml</p>
+                                    <p class="catalog-price"><del>S/. 55.00</del> S/. 48.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Protector Solar">
+                                    <img src="img/aqua.webp" alt="Protector Solar - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Beauty of Joseon Relief Sun SPF50+</p>
+                                    <p class="catalog-price">S/. 78.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Contorno de Ojos">
+                                    <img src="img/calendula.webp" alt="Contorno de Ojos - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Inkey List Caffeine Eye Cream</p>
+                                    <p class="catalog-price">S/. 69.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Bálsamo Labial">
+                                    <img src="img/aqua.webp" alt="Bálsamo Labial - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Vaseline Rosy Lips Petroleum Jelly</p>
+                                    <p class="catalog-price">S/. 22.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Mascarilla Facial">
+                                    <img src="img/calendula.webp" alt="Mascarilla Facial - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Mediheal Sheet Mask Variety Pack</p>
+                                    <p class="catalog-price">S/. 52.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Exfoliantes Químicos">
+                                    <img src="img/aqua.webp" alt="Exfoliantes Químicos - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Paula's Choice 2% BHA Liquid Exfoliant</p>
+                                    <p class="catalog-price">S/. 89.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Tratamientos (9 products) -->
+                    <div id="section3" class="catalog-section-content">
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Serum Retinol">
+                                    <img src="img/calendula.webp" alt="Serum Retinol - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">The Ordinary Granactive Retinoid 2%</p>
+                                    <p class="catalog-price">S/. 75.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Vitamina C">
+                                    <img src="img/aqua.webp" alt="Vitamina C - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Melano CC Intensive Anti-Spot Essence</p>
+                                    <p class="catalog-price">S/. 68.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Peptidos">
+                                    <img src="img/calendula.webp" alt="Peptidos - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Cosrx Advanced Snail 96 Mucin Power Essence</p>
+                                    <p class="catalog-price">S/. 56.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Acido Hialurónico">
+                                    <img src="img/aqua.webp" alt="Acido Hialurónico - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Hada Labo Gokujyun Premium Hyaluronic Lotion</p>
+                                    <p class="catalog-price">S/. 48.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Ampollas">
+                                    <img src="img/calendula.webp" alt="Ampollas - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Dr. Jart+ Dermaclar Clearing Solution Set</p>
+                                    <p class="catalog-price">S/. 112.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Mascarilla Noche">
+                                    <img src="img/aqua.webp" alt="Mascarilla Noche - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Laneige Water Sleeping Mask 70ml</p>
+                                    <p class="catalog-price">S/. 85.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Crema Anti-Edad">
+                                    <img src="img/calendula.webp" alt="Crema Anti-Edad - Vista alternativa" class="img-hover">
+                                    <span class="badge">Premium</span>
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Sulwhasoo First Care Activating Serum</p>
+                                    <p class="catalog-price">S/. 298.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Serum Madecassoside">
+                                    <img src="img/aqua.webp" alt="Serum Madecassoside - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Benton Aloe BHA Skin Serum</p>
+                                    <p class="catalog-price">S/. 64.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Crema Hydrapuff">
+                                    <img src="img/calendula.webp" alt="Crema Hydrapuff - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Pyunkang Yul Hydrapuff Sun Cream SPF50+</p>
+                                    <p class="catalog-price">S/. 92.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Accesorios (9 products) -->
+                    <div id="section4" class="catalog-section-content">
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Roller de Jade">
+                                    <img src="img/aqua.webp" alt="Roller de Jade - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Guasha Jade Facial Massage Tool</p>
+                                    <p class="catalog-price">S/. 42.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Tónico Facial">
+                                    <img src="img/calendula.webp" alt="Tónico Facial - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Klairs Supple Preparation Unscented Toner</p>
+                                    <p class="catalog-price">S/. 63.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Essencia Facial">
+                                    <img src="img/aqua.webp" alt="Essencia Facial - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Missha Time Revolution The First Treatment Essence</p>
+                                    <p class="catalog-price">S/. 89.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Crema Hidratante 2">
+                                    <img src="img/calendula.webp" alt="Crema Hidratante 2 - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Etude House Moistfull Collagen Cream</p>
+                                    <p class="catalog-price">S/. 54.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Protector Solar 2">
+                                    <img src="img/aqua.webp" alt="Protector Solar 2 - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Innisfree Daily UV Defense Sunscreen SPF50+</p>
+                                    <p class="catalog-price">S/. 72.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Mascarilla Pore">
+                                    <img src="img/calendula.webp" alt="Mascarilla Pore - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Innisfree Super Volcanic Pore Clay Mask</p>
+                                    <p class="catalog-price">S/. 46.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Baño de Loción">
+                                    <img src="img/aqua.webp" alt="Baño de Loción - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Hada Labo Gokujyun Hyaluronic Acid Lotion</p>
+                                    <p class="catalog-price">S/. 42.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Aceite Facial">
+                                    <img src="img/calendula.webp" alt="Aceite Facial - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Hadalabo Shirojyun Premium Lotion</p>
+                                    <p class="catalog-price">S/. 51.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Pad Tónicos">
+                                    <img src="img/aqua.webp" alt="Pad Tónicos - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Round Lab Birch Juice Moisturizing Pad</p>
+                                    <p class="catalog-price">S/. 38.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 5: Protección Solar (9 products) -->
+                    <div id="section5" class="catalog-section-content">
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Protector SPF50+">
+                                    <img src="img/calendula.webp" alt="Protector SPF50+ - Vista alternativa" class="img-hover">
+                                    <span class="badge">Oferta</span>
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Beauty of Joseon Relief Sun SPF50+ PA++++</p>
+                                    <p class="catalog-price"><del>S/. 95.00</del> S/. 85.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Protector Athliz">
+                                    <img src="img/aqua.webp" alt="Protector Athliz - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Isntree Hyaluronic Acid Watery Sun Gel SPF50+</p>
+                                    <p class="catalog-price">S/. 78.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Protector Stick">
+                                    <img src="img/calendula.webp" alt="Protector Stick - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Innisfree Daily UV Defense Sunscreen SPF50+</p>
+                                    <p class="catalog-price">S/. 72.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Protector Centella">
+                                    <img src="img/aqua.webp" alt="Protector Centella - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Cosrx Aloe Soothing Sun Cream SPF50+</p>
+                                    <p class="catalog-price">S/. 65.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Protector Tone Up">
+                                    <img src="img/calendula.webp" alt="Protector Tone Up - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Etude House SoonJung Director's Filter</p>
+                                    <p class="catalog-price">S/. 68.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Protector Milk">
+                                    <img src="img/aqua.webp" alt="Protector Milk - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Some By Mi Truecica Mineral Sun Stick</p>
+                                    <p class="catalog-price">S/. 58.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Protector Gel">
+                                    <img src="img/calendula.webp" alt="Protector Gel - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Benton Aloe BHA Skin Sunscreen SPF45+</p>
+                                    <p class="catalog-price">S/. 62.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Protector Highland">
+                                    <img src="img/aqua.webp" alt="Protector Highland - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Pyunkang Yul Hydrapuff Sun Cream SPF50+</p>
+                                    <p class="catalog-price">S/. 92.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Protector Mild">
+                                    <img src="img/calendula.webp" alt="Protector Mild - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Klairs Supple Preparation UV Defense</p>
+                                    <p class="catalog-price">S/. 85.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 6: Bálsamos y Labios (9 products) -->
+                    <div id="section6" class="catalog-section-content">
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Bálsamo Labial 1">
+                                    <img src="img/aqua.webp" alt="Bálsamo Labial 1 - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Vaseline Rosy Lips Petroleum Jelly</p>
+                                    <p class="catalog-price">S/. 22.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Bálsamo Labial 2">
+                                    <img src="img/calendula.webp" alt="Bálsamo Labial 2 - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Laneige Lip Sleeping Mask Berry</p>
+                                    <p class="catalog-price">S/. 48.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Bálsamo Labial 3">
+                                    <img src="img/aqua.webp" alt="Bálsamo Labial 3 - Vista alternativa" class="img-hover">
+                                    <span class="badge">Nuevo</span>
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Romand Lip Tint Glow</p>
+                                    <p class="catalog-price">S/. 35.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Bálsamo Labial 4">
+                                    <img src="img/calendula.webp" alt="Bálsamo Labial 4 - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Peripera Ink Velvet Lip Tint</p>
+                                    <p class="catalog-price">S/. 38.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Bálsamo Labial 5">
+                                    <img src="img/aqua.webp" alt="Bálsamo Labial 5 - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Etude House Dear My Blooming Lips</p>
+                                    <p class="catalog-price">S/. 42.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Bálsamo Labial 6">
+                                    <img src="img/calendula.webp" alt="Bálsamo Labial 6 - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Tony Moly Delight Tony Tint</p>
+                                    <p class="catalog-price">S/. 36.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Bálsamo Labial 7">
+                                    <img src="img/aqua.webp" alt="Bálsamo Labial 7 - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Clio Glow Tint Lip</p>
+                                    <p class="catalog-price">S/. 44.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/dermacontrol.webp" alt="Bálsamo Labial 8">
+                                    <img src="img/calendula.webp" alt="Bálsamo Labial 8 - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Missha M Magic Cushion Lip</p>
+                                    <p class="catalog-price">S/. 39.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-card">
+                            <div class="card-inner">
+                                <div class="catalog-img">
+                                    <img src="img/clarbodymist.webp" alt="Bálsamo Labial 9">
+                                    <img src="img/aqua.webp" alt="Bálsamo Labial 9 - Vista alternativa" class="img-hover">
+                                </div>
+                                <div class="catalog-body">
+                                    <p class="catalog-title">Nature Republic Real Nature Lip Balm</p>
+                                    <p class="catalog-price">S/. 28.00</p>
+                                    <a class="btn btn-outline catalog-btn" href="#">Agregar al carrito</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JavaScript for section switching -->
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const filterItems = document.querySelectorAll('.section-filter li');
+                        const sections = document.querySelectorAll('.catalog-section-content');
+
+                        filterItems.forEach(item => {
+                            item.addEventListener('click', function() {
+                                // Remove active class from all items
+                                filterItems.forEach(i => i.classList.remove('filter-active'));
+                                // Add active class to clicked item
+                                this.classList.add('filter-active');
+
+                                // Hide all sections
+                                sections.forEach(section => section.classList.remove('active'));
+                                // Show target section
+                                const target = this.getAttribute('data-target');
+                                document.getElementById(target).classList.add('active');
+                            });
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+        <!-- Catalog / Kits End -->
+
+
+        <!-- Footer Start -->
+        <footer class="site-footer">
+            <div class="footer-top">
+                <div class="container text-center">
+                    <h3>¡Forma parte de lecoreane Kaluza-Beauty Club! <span>💌</span></h3>
+                    <p>Suscríbete a K-Beauty Club. Tendrás acceso VIP a los lanzamientos, descuentos y promociones exclusivas.</p>
+                    <div class="subscribe">
+                        <input type="email" placeholder="Correo electrónico">
+                        <button class="subscribe-btn">→</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>Menu</h5>
+                            <ul class="footer-links">
+                                <li><a href="#">¿Quiénes somos?</a></li>
+                                <li><a href="#">Tiendas</a></li>
+                                <li><a href="#">Contacto</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Libro de Reclamaciones</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Información</h5>
+                            <ul class="footer-links">
+                                <li><a href="#">Preguntas frecuentes</a></li>
+                                <li><a href="#">Términos y condiciones</a></li>
+                                <li><a href="#">Careers & Collabs</a></li>
+                                <li><a href="#">Trabaja con nosotros</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Síguenos</h5>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center">
+                <div class="container">
+                    <p class="copyright">© 2026, Kaluza</p>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

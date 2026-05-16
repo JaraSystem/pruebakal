@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Kaluza Beauty</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet"> 
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    <style>
+        .section-tabs {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section-filter {
+            list-style: none;
+            display: inline-flex;
+            gap: 10px;
+            padding: 0;
+            margin: 0;
+        }
+        .section-filter li {
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-text);
+            background: var(--color-white);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .section-filter li:hover,
+        .section-filter li.filter-active {
+            background: var(--color-primary);
+            color: var(--color-white);
+            border-color: var(--color-primary);
+        }
+        .catalog-section-content {
+            display: none;
+        }
+        .catalog-section-content.active {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            padding: 8px 60px 24px;
+        }
+        @media (max-width: 1200px) {
+            .catalog-section-content.active {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 8px 28px;
+            }
+        }
+        @media (max-width: 575px) {
+            .catalog-section-content.active {
+                grid-template-columns: 1fr;
+                padding: 8px 16px;
+            }
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding: 16px 60px 24px;
+        }
+        @media (max-width: 1200px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 16px 28px 24px;
+            }
+        }
+        @media (max-width: 575px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+                padding: 16px 16px 24px;
+            }
+        }
+        .product-card {
+            background: var(--color-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .product-img {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+        }
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        .product-img .img-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+        .product-card:hover .product-img .img-main {
+            opacity: 0;
+        }
+        .product-card:hover .product-img .img-hover {
+            opacity: 1;
+        }
+        .product-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: var(--color-primary);
+            color: var(--color-white);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+        .product-body {
+            padding: 16px;
+        }
+        .product-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .product-price {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 12px;
+        }
+        .product-price del {
+            font-size: 13px;
+            color: #999;
+            font-weight: 400;
+            margin-right: 6px;
+        }
+        .product-btn {
+            width: 100%;
+            font-size: 13px;
+            padding: 8px 16px;
+        }
+        .catalog-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 0 60px 24px;
+        }
+        @media (max-width: 768px) {
+            .catalog-controls {
+                padding: 0 16px 24px;
+            }
+        }
+        .search-box {
+            position: relative;
+            max-width: 300px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 10px 16px 10px 40px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 24px;
+            font-size: 14px;
+            background: var(--color-white);
+        }
+        .search-box i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+        .filter-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .filter-btn {
+            padding: 8px 20px;
+            font-size: 13px;
+            font-weight: 500;
+            background: var(--color-white);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--color-primary);
+            color: var(--color-white);
+            border-color: var(--color-primary);
+        }
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 24px 0 40px;
+        }
+        .pagination-btn {
+            padding: 8px 14px;
+            font-size: 14px;
+            background: var(--color-white);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .pagination-btn:hover,
+        .pagination-btn.active {
+            background: var(--color-primary);
+            color: var(--color-white);
+            border-color: var(--color-primary);
+        }
+        .pagination-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+        <!-- Top Bar Start -->
+        <div class="top-bar d-none d-md-block">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="top-bar-left">
+                            <div class="text">
+                                <i class="far fa-clock"></i>
+                                <h2>8:00 - 9:00</h2>
+                                <p>Lun - Viern</p>
+                            </div>
+                            <div class="text">
+                                <i class="fa fa-phone-alt"></i>
+                                <h2>+51 999 999 999</h2>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="top-bar-right">
+                            <div class="social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="#" class="btn btn-outline btn-view">Ver todo</a>
+                </div>
+            </div>
+        </div>
+        <!-- Top Bar End -->
+
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">K<span>aluz</span>A</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.html" class="nav-item nav-link ">Inicio</a>
+                        <a href="novedades.html" class="nav-item nav-link ">novedades</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link active dropdown-toggle" data-toggle="dropdown">Skincare</a>
+                            <div class="dropdown-menu">
+                                <a href="Limpiadores.html" class="dropdown-item">Limpiadores</a>
+                                <a href="Exfoliantes.html" class="dropdown-item ">Exfoliantes</a>
+                                <a href="tonicos.html" class="dropdown-item ">Tónicos</a>
+                                <a href="toner.html" class="dropdown-item">Toner Pad</a>
+                                <a href="cremas.html" class="dropdown-item">Cremas/Barras</a>
+                                <a href="protector.html" class="dropdown-item">Protector solar</a>
+                                <a href="mascarillas.html" class="dropdown-item">Mascarillas y parches</a>
+                                <a href="sueros.html" class="dropdown-item">Sueros y ampollas</a>
+                                <a href="contorno.html" class="dropdown-item">Contorno de ojos</a>
+                                <a href="balsamo.html" class="dropdown-item">Bálsamo Labial</a>
+                                <a href="cuerpo.html" class="dropdown-item">Cuerpo y cabello</a>
+                                <a href="kits.html" class="dropdown-item">Kits</a>
+                                <a href="todoskin.html" class="dropdown-item nav-link active">Todo skincare</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Maquillaje</a>
+                            <div class="dropdown-menu">
+                                <a href="rostro.html" class="dropdown-item">Rostro (Base y Rubor)</a>
+                                <a href="labios.html" class="dropdown-item">Labios</a>
+                                <a href="ojos.html" class="dropdown-item">Ojos</a>
+                                <a href="unias.html" class="dropdown-item">Uñas y Manos</a>
+                                <a href="todomaquillaje.html" class="dropdown-item">Todo Maquillaje</a>
+                            </div>
+                        </div>
+                        <a href="kits.html" class="nav-item nav-link">Kits</a>
+                        <a href="problemas.html" class="nav-item nav-link">Problemas de piel</a>
+                        <a href="fashion.html" class="nav-item nav-link">Fashion</a>
+
+                        <!-- <a href="contact.html" class="nav-item nav-link">Contact</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Todo Skincare</h2>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- E-commerce Product Catalog Start -->
+        <section class="product-catalog">
+            <div class="container-fluid">
+                <div class="catalog-header">
+                    <div class="section-header">
+                        <p>Skincare</p>
+                        <h2>Todo Skincare</h2>
+                    </div>
+                    
+                    <!-- Search and Filter Bar -->
+                    <div class="catalog-controls">
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="Buscar productos..." autocomplete="off">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <div class="filter-categories">
+                            <button class="filter-btn active" data-category="all">Todos</button>
+                            <button class="filter-btn" data-category="kits">Kits</button>
+                            <button class="filter-btn" data-category="cuidado">Cuidado Diario</button>
+                            <button class="filter-btn" data-category="tratamientos">Tratamientos</button>
+                            <button class="filter-btn" data-category="accesorios">Accesorios</button>
+                            <button class="filter-btn" data-category="proteccion">Protección Solar</button>
+                            <button class="filter-btn" data-category="labios">Bálsamos y Labios</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div id="productsGrid" class="products-grid">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+
+                <!-- Pagination -->
+                <div id="pagination" class="pagination-container">
+                    <!-- Pagination will be generated dynamically -->
+                </div>
+            </div>
+        </section>
+        <!-- E-commerce Product Catalog End -->
+
+        <!-- Footer Start -->
+        <footer class="site-footer">
+            <div class="footer-top">
+                <div class="container text-center">
+                    <h3>¡Forma parte de lecoreane Kaluza-Beauty Club! <span>💌</span></h3>
+                    <p>Suscríbete a K-Beauty Club. Tendrás acceso VIP a los lanzamientos, descuentos y promociones exclusivas.</p>
+                    <div class="subscribe">
+                        <input type="email" placeholder="Correo electrónico">
+                        <button class="subscribe-btn">→</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>Menu</h5>
+                            <ul class="footer-links">
+                                <li><a href="#">¿Quiénes somos?</a></li>
+                                <li><a href="#">Tiendas</a></li>
+                                <li><a href="#">Contacto</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Libro de Reclamaciones</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Información</h5>
+                            <ul class="footer-links">
+                                <li><a href="#">Preguntas frecuentes</a></li>
+                                <li><a href="#">Términos y condiciones</a></li>
+                                <li><a href="#">Careers & Collabs</a></li>
+                                <li><a href="#">Trabaja con nosotros</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Síguenos</h5>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center">
+                <div class="container">
+                    <p class="copyright">© 2026, Kaluza</p>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+<!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+        <!-- E-commerce Catalog Script -->
+    <script>
+        const products = [
+            { id: 1, name: "Isntree Super Aqua Deep Care Set", price: 252, originalPrice: 280, category: "kits", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp", badge: "Oferta" },
+            { id: 2, name: "Cosrx Advanced Snail 92% Set", price: 189, category: "kits", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 3, name: "Some By Mi AHA-BHA-PHA Set", price: 156, category: "kits", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 4, name: "Benton Aloe BHA Skin Set", price: 142, category: "kits", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 5, name: "The Inkey List Complete Routine Set", price: 178, category: "kits", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp", badge: "Nuevo" },
+            { id: 6, name: "Naturium Vitamin C Daily Set", price: 164, category: "kits", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 7, name: "KOOS Gentle Daily Cleansing Gel", price: 58, category: "cuidado", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 8, name: "Hada Labo Gokujyun Premium Toner", price: 45, category: "cuidado", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 9, name: "The Ordinary Niacinamide 10% + Zinc", price: 62, category: "cuidado", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 10, name: "CeraVe Moisturizing Cream 45ml", price: 48, originalPrice: 55, category: "cuidado", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp", badge: "Oferta" },
+            { id: 11, name: "Beauty of Joseon Relief Sun SPF50+", price: 78, category: "cuidado", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 12, name: "Inkey List Caffeine Eye Cream", price: 69, category: "cuidado", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 13, name: "Vaseline Rosy Lips Petroleum Jelly", price: 22, category: "cuidado", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 14, name: "Mediheal Sheet Mask Variety Pack", price: 52, category: "cuidado", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 15, name: "Paula's Choice 2% BHA Liquid Exfoliant", price: 89, category: "cuidado", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 16, name: "The Ordinary Granactive Retinoid 2%", price: 75, category: "tratamientos", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 17, name: "Melano CC Intensive Anti-Spot Essence", price: 68, category: "tratamientos", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 18, name: "Cosrx Advanced Snail 96 Mucin Power Essence", price: 56, category: "tratamientos", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 19, name: "Hada Labo Gokujyun Premium Hyaluronic Lotion", price: 48, category: "tratamientos", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 20, name: "Dr. Jart+ Dermaclar Clearing Solution Set", price: 112, category: "tratamientos", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 21, name: "Laneige Water Sleeping Mask 70ml", price: 85, category: "tratamientos", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 22, name: "Sulwhasoo First Care Activating Serum", price: 298, category: "tratamientos", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp", badge: "Premium" },
+            { id: 23, name: "Benton Aloe BHA Skin Serum", price: 64, category: "tratamientos", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 24, name: "Pyunkang Yul Hydrapuff Sun Cream SPF50+", price: 92, category: "tratamientos", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 25, name: "Guasha Jade Facial Massage Tool", price: 42, category: "accesorios", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 26, name: "Klairs Supple Preparation Unscented Toner", price: 63, category: "accesorios", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 27, name: "Missha Time Revolution The First Treatment Essence", price: 89, category: "accesorios", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 28, name: "Etude House Moistfull Collagen Cream", price: 54, category: "accesorios", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 29, name: "Innisfree Daily UV Defense Sunscreen SPF50+", price: 72, category: "accesorios", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 30, name: "Innisfree Super Volcanic Pore Clay Mask", price: 46, category: "accesorios", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 31, name: "Hada Labo Gokujyun Hyaluronic Acid Lotion", price: 42, category: "accesorios", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 32, name: "Hadalabo Shirojyun Premium Lotion", price: 51, category: "accesorios", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 33, name: "Round Lab Birch Juice Moisturizing Pad", price: 38, category: "accesorios", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 34, name: "Beauty of Joseon Relief Sun SPF50+ PA++++", price: 85, originalPrice: 95, category: "proteccion", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp", badge: "Oferta" },
+            { id: 35, name: "Isntree Hyaluronic Acid Watery Sun Gel SPF50+", price: 78, category: "proteccion", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 36, name: "Innisfree Daily UV Defense Sunscreen SPF50+", price: 72, category: "proteccion", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 37, name: "Cosrx Aloe Soothing Sun Cream SPF50+", price: 65, category: "proteccion", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 38, name: "Etude House SoonJung Director's Filter", price: 68, category: "proteccion", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 39, name: "Some By Mi Truecica Mineral Sun Stick", price: 58, category: "proteccion", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 40, name: "Benton Aloe BHA Skin Sunscreen SPF45+", price: 62, category: "proteccion", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 41, name: "Pyunkang Yul Hydrapuff Sun Cream SPF50+", price: 92, category: "proteccion", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 42, name: "Klairs Supple Preparation UV Defense", price: 85, category: "proteccion", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 43, name: "Vaseline Rosy Lips Petroleum Jelly", price: 22, category: "labios", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 44, name: "Laneige Lip Sleeping Mask Berry", price: 48, category: "labios", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 45, name: "Romand Lip Tint Glow", price: 35, category: "labios", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp", badge: "Nuevo" },
+            { id: 46, name: "Peripera Ink Velvet Lip Tint", price: 38, category: "labios", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 47, name: "Etude House Dear My Blooming Lips", price: 42, category: "labios", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 48, name: "Tony Moly Delight Tony Tint", price: 36, category: "labios", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 49, name: "Clio Glow Tint Lip", price: 44, category: "labios", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" },
+            { id: 50, name: "Missha M Magic Cushion Lip", price: 39, category: "labios", image: "img/dermacontrol.webp", hoverImage: "img/calendula.webp" },
+            { id: 51, name: "Nature Republic Real Nature Lip Balm", price: 28, category: "labios", image: "img/clarbodymist.webp", hoverImage: "img/aqua.webp" }
+        ];
+
+        const productsPerPage = 9;
+        let currentPage = 1;
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function renderProducts() {
+            const filtered = products.filter(p => {
+                const matchesCategory = currentCategory === 'all' || p.category === currentCategory;
+                const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+
+            const totalPages = Math.ceil(filtered.length / productsPerPage);
+            const start = (currentPage - 1) * productsPerPage;
+            const paginated = filtered.slice(start, start + productsPerPage);
+
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = paginated.map(p => `
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="${p.image}" alt="${p.name}" class="img-main">
+                        <img src="${p.hoverImage}" alt="${p.name} - Vista alternativa" class="img-hover">
+                        ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+                    </div>
+                    <div class="product-body">
+                        <p class="product-title">${p.name}</p>
+                        <p class="product-price">${p.originalPrice ? `<del>S/. ${p.originalPrice}.00</del>` : ''}S/. ${p.price}.00</p>
+                        <a class="btn btn-outline product-btn" href="#">Agregar al carrito</a>
+                    </div>
+                </div>
+            `).join('');
+
+            renderPagination(totalPages);
+        }
+
+        function renderPagination(totalPages) {
+            const pagination = document.getElementById('pagination');
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+            pagination.innerHTML = `
+                <button class="pagination-btn ${currentPage === 1 ? 'disabled' : ''}" onclick="changePage(${currentPage - 1})">‹</button>
+                ${Array.from({length: totalPages}, (_, i) => `
+                    <button class="pagination-btn ${currentPage === i + 1 ? 'active' : ''}" onclick="changePage(${i + 1})">${i + 1}</button>
+                `).join('')}
+                <button class="pagination-btn ${currentPage === totalPages ? 'disabled' : ''}" onclick="changePage(${currentPage + 1})">›</button>
+            `;
+        }
+
+        function changePage(page) {
+            const filtered = products.filter(p => {
+                const matchesCategory = currentCategory === 'all' || p.category === currentCategory;
+                const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+            const totalPages = Math.ceil(filtered.length / productsPerPage);
+            if (page >= 1 && page <= totalPages) {
+                currentPage = page;
+                renderProducts();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.category;
+                    currentPage = 1;
+                    renderProducts();
+                });
+            });
+
+            document.getElementById('searchInput').addEventListener('input', function() {
+                searchQuery = this.value;
+                currentPage = 1;
+                renderProducts();
+            });
+
+            renderProducts();
+        });
+    </script>
+    </body>
+</html>
